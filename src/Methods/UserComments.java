@@ -27,7 +27,7 @@ public class UserComments {
 
         List<Comment> comments = GSON.fromJson(response.body(), COMMENT_TYPE);
 
-        String fileName = String.format("docs//user-7-post-70-comments.json", post.getUserId(), post.getId());
+        String fileName = String.format("docs//user-%d-post-%d-comments.json", post.getUserId(), post.getId());
         File file = new File(fileName);
         FileWriter fileWriter = new FileWriter(file);
         fileWriter.write(GSON_PRETTY.toJson(comments));
